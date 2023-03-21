@@ -57,3 +57,10 @@ jobs:
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
 
+      - name: SWE 637 compile hadoop
+        run: mvn clean install -DskipTests -pl hadoop-hdfs-project/hadoop-hdfs-httpfs -am
+      
+      - name: SWE 637 Run Tests for hadoop
+        run: mvn -pl hadoop-hdfs-project/hadoop-hdfs-httpfs test -Dtest=org.apache.hadoop.test.TestHFSTestCase#waitForTimeOutRatio1
+
+
