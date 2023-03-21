@@ -61,6 +61,6 @@ jobs:
         run: mvn clean install -DskipTests -pl hadoop-hdfs-project/hadoop-hdfs-httpfs -am
       
       - name: SWE 637 Run Tests for hadoop
-        run: mvn -pl hadoop-hdfs-project/hadoop-hdfs-httpfs test -Dtest=org.apache.hadoop.test.TestHFSTestCase#waitForTimeOutRatio1
+        run: mvn -pl hadoop-hdfs-project/hadoop-hdfs-httpfs edu.illinois:nondex-maven-plugin:2.1.1:nondex -Dtest=org.apache.hadoop.test.TestHFSTestCase#waitForTimeOutRatio1 -DnondexRuns=150
 
 
